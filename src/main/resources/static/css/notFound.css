@@ -1,0 +1,32 @@
+.container-fluid img {
+    margin-top: 80px;
+}
+
+.container-fluid p {
+    margin-top: 60px;
+    margin-bottom: 40px;
+    font-size: 16px;
+}
+p {
+    line-height: 150%;
+}
+body, p {
+    padding: 0;
+    margin: 0;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.notfound-1 {
+    display: inline-block;
+    width: 148px;
+    height: 40px;
+    font-size: 16px;
+    line-height: 40px;
+    color: #ffffff;
+    background: #1daaf0;
+    border-radius: 2px;
+}
+a {
+    text-decoration: none;
+}

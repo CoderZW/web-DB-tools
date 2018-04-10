@@ -1,0 +1,11 @@
+.bottom_bar {
+    text-align: center;
+    position: fixed;
+    z-index: 999;
+    bottom: 0px;
+    width: 20%;
+    background-color: paleturquoise;
+    margin:auto;
+    left:0;
+    right:0;
+}
