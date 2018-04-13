@@ -8,6 +8,7 @@
 * 支持添加用户,权限配置,只读,读写,dml等
 * 支持定期密码更新提醒,只需一个配置配置密码必须更新的周期
 * 附带一些常用的开发工具,JSON格式化,freemarker语法测试,域名whois查询,正则表达式测试,分片上传文件至项目所在服务器.
+* 还有加了百度统计统计各个页面及用户分析,如需修改成自己,修改tj.ftl内容为自己的百度统计代码即可
 
 # 技术框架及插件
 * spring boot,spring mvc
@@ -17,12 +18,14 @@
 
 # 使用截图
 ![单条SQL执行](https://github.com/hammerLei/web-DB-tools/blob/master/photo/database1.png)
-
+***
 ![多条SQL执行](https://github.com/hammerLei/web-DB-tools/blob/master/photo/database2.png)
-
+***
 ![收藏](https://github.com/hammerLei/web-DB-tools/blob/master/photo/database3.png)
-
+***
 ![导出结果](https://github.com/hammerLei/web-DB-tools/blob/master/photo/database5.png)
+***
+![导出结果](https://github.com/hammerLei/web-DB-tools/blob/master/photo/baidutj.png)
 
 # 部署说明
 * 服务器下基础java环境请自行配置
