@@ -23,3 +23,25 @@
 ![收藏](https://github.com/hammerLei/web-DB-tools/blob/master/photo/database3.png)
 
 ![导出结果](https://github.com/hammerLei/web-DB-tools/blob/master/photo/database5.png)
+
+# 部署说明
+* 服务器下基础java环境请自行配置
+* deploy 成jar包
+* 项目目录下主要包含这些文件和目录 conf  homethy-site-database-1.0-SNAPSHOT.jar  log  logs  restart.sh
+``` restart.sh 脚本
+#!/bin/bash
+
+jar_file=homethy-site-database-1.0-SNAPSHOT.jar
+prot_file='Dserver.port=20101'
+
+kill -9 `ps aux|grep $jar_file | grep $prot_file | grep java | grep -v grep | awk '{print $2}'`
+
+echo "---------------------------kill done--------------------------------"
+
+java -jar -Dserver.port=20101 -Dchime.application.name=site -Dspring.profiles.active=test homethy-site-database-1.0-SNAPSHOT.jar >> $(pwd)/log/catalina-$(date +%Y-%m-%d).log &
+
+echo "restart success!"
+
+* conf目录对象项目中的conf目录,里面文件内容打开看便知
+
+
