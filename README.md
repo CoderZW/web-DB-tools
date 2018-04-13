@@ -28,7 +28,9 @@
 * 服务器下基础java环境请自行配置
 * deploy 成jar包
 * 项目目录下主要包含这些文件和目录 conf  homethy-site-database-1.0-SNAPSHOT.jar  log  logs  restart.sh
-``` restart.sh 脚本
+* conf目录对象项目中的conf目录,里面文件内容打开看便知
+* restart.sh 脚本如下,自行修改路径和端口
+``` 
 #!/bin/bash
 
 jar_file=homethy-site-database-1.0-SNAPSHOT.jar
@@ -41,7 +43,4 @@ echo "---------------------------kill done--------------------------------"
 java -jar -Dserver.port=20101 -Dchime.application.name=site -Dspring.profiles.active=test homethy-site-database-1.0-SNAPSHOT.jar >> $(pwd)/log/catalina-$(date +%Y-%m-%d).log &
 
 echo "restart success!"
-
-* conf目录对象项目中的conf目录,里面文件内容打开看便知
-
-
+``` 
