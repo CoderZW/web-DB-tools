@@ -1,18 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>登录</title>
-    <meta name="renderer" content="webkit">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="format-detection" content="telephone=no">
-    <link rel="stylesheet" href="js/layui/css/layui.css" media="all" />
-    <link rel="stylesheet" href="css/login.css" media="all" />
-</head>
-<body>
+<#include "/macros/page_macro_layui.ftl">
+<@webpage pageCss="css/login.css" title="登录" pageJs="js/login.js">
+
 <video class="video-player" preload="auto" autoplay="autoplay" loop="loop" style="width: 100%;height: auto">
     <source src="video/login.mp4" type="video/mp4">
     <!-- 此视频文件为支付宝所有，在此仅供样式参考，如用到商业用途，请自行更换为其他视频或图片，否则造成的任何问题使用者本人承担，谢谢 -->
@@ -35,7 +23,4 @@
     </div>
 </div>
 <div hidden="true" page-id="databse-login-page"></div>
-<script type="text/javascript" src="js/layui/layui.js"></script>
-<script type="text/javascript" src="js/login.js"></script>
-</body>
-</html>
+</@webpage>

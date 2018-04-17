@@ -5,12 +5,12 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>用户管理</title>
-    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-editable.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.css">
+    <link rel="stylesheet" href="css/bootstrap-table.min.css">
     <link type="text/css" rel="stylesheet" href="css/operater.css">
     <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/bootstrap-editable.js"></script>
     <script type="text/javascript" src="js/bootstrap-table.js"></script>
     <script type="text/javascript" src="js/bootstrap-table-editable.js"></script>
@@ -457,5 +457,6 @@
     });
 
 </script>
-
+<#include "/base/tj.ftl">
 </body>
+</html>

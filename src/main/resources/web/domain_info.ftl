@@ -1,28 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-        "http://www.w3.org/TR/html4/loose.dtd">
-<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>域名信息查询</title>
+<#include "/macros/page_macro.ftl">
+<@webpage pageCss="css/operater.css" title="域名信息查询">
 
-    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.css">
-    <link type="text/css" rel="stylesheet" href="css/operater.css">
-    <link rel="stylesheet" href="css/codemirror.css">
-    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap-table-export.js"></script>
-    <script type="text/javascript" src="js/FileSaver.min.js"></script>
-    <script type="text/javascript" src="js/xlsx.core.min.js"></script>
-    <script type="text/javascript" src="js/tableExport.js"></script>
-    <script type="text/javascript" src="js/layer.js"></script>
-    <style>
-        .CodeMirror { height: auto; border: 1px solid #ddd; }
-        .CodeMirror-scroll { max-height: 200px; border-left: 30px;}
-        .CodeMirror pre { padding-left: 7px; line-height: 1.25; }
-    </style>
-</head>
 <header>
 
     <section class="header-container">
@@ -316,4 +294,4 @@
 
 
     </script>
-</body>
+</@webpage>

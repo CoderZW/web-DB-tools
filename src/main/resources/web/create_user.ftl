@@ -1,18 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-        "http://www.w3.org/TR/html4/loose.dtd">
+<#include "/macros/page_macro.ftl">
+<@webpage pageCss="css/operater.css" title="创建用户">
 
-<html xmlns="http://www.w3.org/1999/html">
-<head>
-    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/layer.js"></script>
-    <title>人人DB工具</title>
-    <link type="text/css" rel="stylesheet"
-          href="css/operater.css">
-</head>
-
-<body>
 <header>
 
     <section class="header-container">
@@ -135,8 +123,4 @@
         return false;
     });
 </script>
-
-</body>
-
-
-</html>
+</@webpage>

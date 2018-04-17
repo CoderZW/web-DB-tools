@@ -81,7 +81,7 @@ public class OperationServiceImpl implements DataOperationService {
 
   private String excSql(String env,String schema,String statement,Statement queryLeadQAInfo) throws JsonProcessingException{
     if(statement.trim().endsWith(";")){
-      statement = HomethyStringUtil.replceMultipleSpace(statement.substring(0,statement.length()-1));
+      statement = statement.substring(0,statement.length()-1);
     }
     String result;
     try{
@@ -109,7 +109,7 @@ public class OperationServiceImpl implements DataOperationService {
 
   public String excSqlWithoutHistory(String env,String schema,String statement) throws JsonProcessingException{
     if(statement.trim().endsWith(";")){
-      statement = HomethyStringUtil.replceMultipleSpace(statement.substring(0,statement.length()-1));
+      statement = statement.substring(0,statement.length()-1);
     }
     String result;
     try{

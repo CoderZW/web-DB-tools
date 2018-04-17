@@ -42,9 +42,10 @@ public class HomethyStringUtil {
    * @return
    */
   public static String replceMultipleOnlySpace(String str){
-    str = str.replaceAll(" +"," ");
-    str = str.replaceAll(" \n","\n");
-    str = str.replaceAll("\n ","\n");
+    str = str.replaceAll(" +\n"," \n");
+    str = str.replaceAll("\n +","\n ");
+//    str = str.replaceAll(" \n","\n");
+//    str = str.replaceAll("\n ","\n");
     return str.replaceAll("\n+","\n");
   }
 
@@ -137,7 +138,8 @@ public class HomethyStringUtil {
 //    System.out.println(a.replaceAll(" +"," "));
 //    System.out.println(a.trim().substring(0,a.length()-1));
 //    System.out.println(replceSingleQuot("select * from   database_user_info where account='selec'"));
-    System.out.println(replceSpaceToStr("dasd dsad","\\\\\\ "));
+//    "select *  from   aaa where ddd='aa   11 '
+    System.out.println(replceMultipleOnlySpace("select *  from   aaa where ddd='aa   11 ' \nand a  = 'aaa  d  '\n   and ada"));
 
   }
 }

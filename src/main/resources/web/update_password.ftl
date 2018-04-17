@@ -87,16 +87,19 @@
                     您的密码已到期,请修改密码,否则无法继续使用该平台工具!
                 </div>
             </#if>
+            <#if !(user.updatePasswordinterval?exists && user.updatePasswordinterval &gt; 60) && !(isInitPw == true)>
                 <div class="form-group">
                     <label for="name" class="col-sm-5 control-label">修改默认数据库</label>
                     <div class="col-sm-5">
                         <select class="col-sm-4" id="defaultSchema" onchange="changeSchema()">
-                        <#list schemaList as schema>
-                            <option value="${schema}">${schema}</option>
-                        </#list>
+                            <#list schemaList as schema>
+                                <option value="${schema}">${schema}</option>
+                            </#list>
                         </select>
                     </div>
                 </div>
+            </#if>
+
             </div>
         </div>
     </div>
@@ -196,7 +199,7 @@
             })
     }
 </script>
-
+<#include "/base/tj.ftl">
 </body>
 
 

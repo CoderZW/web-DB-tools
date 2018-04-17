@@ -9,7 +9,9 @@ header {
     width: 100%;
     z-index: 4;
 }
-
+.operate-result-data{
+    white-space:pre;
+}
 .header-container {
     height: 100%;
     margin: 0 auto;

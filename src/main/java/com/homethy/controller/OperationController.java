@@ -63,9 +63,9 @@ public class OperationController {
       @RequestParam(value = "name") String name,
       @RequestParam(value = "statement") String statement) throws JsonProcessingException {
     if(id == 0 ){
-      userService.saveUserFavoriteSql(name, HomethyStringUtil.replceMultipleSpace(statement));
+      userService.saveUserFavoriteSql(name, statement);
     }else{
-      return userService.updateUserFavoriteSql(id,name, HomethyStringUtil.replceMultipleSpace(statement));
+      return userService.updateUserFavoriteSql(id,name, statement);
     }
     return ReturnJacksonUtil.resultOk(userService.queryDatabaseUserFavoriteSql());
   }

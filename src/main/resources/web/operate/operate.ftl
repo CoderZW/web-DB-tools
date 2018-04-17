@@ -198,7 +198,7 @@
                 <div class="form-group">
                     <div style="margin-left: 137px" id="excCountJson"></div>
                     <label for="name" class="col-sm-2 control-label">执行结果</label>
-                    <div class="col-sm-7">
+                    <div class="col-sm-7 operate-result-data">
                     <#--   <textarea class="form-control data-result" rows="5"
                                   id="dataExcResult"></textarea>-->
                         <input type="hidden" value="" id="data_json">
@@ -256,7 +256,7 @@
 
         <form id="table-result-div" role="form" onsubmit="return false;">
 
-            <div class="form-group" id="result-table" >
+            <div class="form-group operate-result-data" id="result-table" >
 
                 <table id="tb_departments" ></table>
 

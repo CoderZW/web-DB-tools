@@ -116,39 +116,36 @@ public class BeanUtil extends BeanUtils {
   public static void populate(Object bean, HttpServletRequest request){
     Class clazz = bean.getClass();
     Method ms[] = clazz.getDeclaredMethods();
-    String mname;
-    String field;
-    String fieldType;
-    String value;
     for(Method m : ms){
-      mname = m.getName();
+      String mname = m.getName();
       if(!mname.startsWith("set")
           || ArrayUtils.isEmpty(m.getParameterTypes())){
         continue;
       }
       try{
-        field = mname.toLowerCase().charAt(3) + mname.substring(4, mname.length());
+        String field = mname.toLowerCase().charAt(3) + mname.substring(4, mname.length());
 //        System.out.println(field);
-        value = request.getParameter(field);
+        String value = request.getParameter(field);
         if(StringUtils.isEmpty(value)){
           continue;
         }
 
-        fieldType = m.getParameterTypes()[0].getName();
-        //以下可以确认value为String类型
-//        if(String.class.getName().equals(fieldType) ){
-//          m.invoke(bean, value);
-//        }else
-        if((Integer.class.getName().equals(fieldType) || "int".equals(fieldType)) && NumberUtils.isDigits(value)){
-          m.invoke(bean, Integer.valueOf(value));
-        }else if(Short.class.getName().equals(fieldType) && NumberUtils.isDigits(value)){
+        Class parameter = m.getParameterTypes()[0];
+
+        if((parameter.isAssignableFrom(Short.class) || parameter.isAssignableFrom(short.class)) && NumberUtils.isDigits(value)){
           m.invoke(bean, Short.valueOf(value));
-        }else if((Float.class.getName().equals(fieldType) || "float".equals(fieldType)) && NumberUtils.isNumber(value)){
+        }else if((parameter.isAssignableFrom(Integer.class) || parameter.isAssignableFrom(int.class)) && NumberUtils.isDigits(value)){
+          m.invoke(bean, Integer.valueOf(value));
+        }else if((parameter.isAssignableFrom(Long.class) || parameter.isAssignableFrom(long.class)) && NumberUtils.isDigits(value)){
+          m.invoke(bean, Long.valueOf(value));
+        }else if((parameter.isAssignableFrom(Float.class) || parameter.isAssignableFrom(float.class)) && NumberUtils.isNumber(value)){
           m.invoke(bean, Float.valueOf(value));
-        }else if((Double.class.getName().equals(fieldType) || "double".equals(fieldType)) && NumberUtils.isNumber(value)){
+        }else if((parameter.isAssignableFrom(Double.class) || parameter.isAssignableFrom(double.class)) && NumberUtils.isNumber(value)){
           m.invoke(bean, Double.valueOf(value));
-        }else if(Date.class.getName().equals(fieldType)){
+        }else if(parameter.isAssignableFrom(Date.class)){
           m.invoke(bean, DateUtils.parseDate(value, "yyyy-MM-dd", "yyyy-MM-dd HH:mm:ss"));
+        }else if((parameter.isAssignableFrom(Boolean.class) || parameter.isAssignableFrom(boolean.class)) && ("true".equals(value) || "false".equals(value))){
+          m.invoke(bean, Boolean.valueOf(value));
         }else{
           m.invoke(bean, value);
         }
@@ -182,6 +179,7 @@ public class BeanUtil extends BeanUtils {
         }
 
         fieldType = m.getParameterTypes()[0].getName();
+        Class<?> ft = m.getParameterTypes()[0];
 
         Object ob2 = m.getParameterTypes();
         Object ob1 = m.getParameterTypes()[0];
@@ -190,7 +188,10 @@ public class BeanUtil extends BeanUtils {
 //        if(String.class.getName().equals(fieldType) ){
 //          m.invoke(bean, value);
 //        }else
-        if (ob instanceof Integer && NumberUtils.isDigits(value)) {
+        if ((ft.isAssignableFrom(Long.class) || ft.isAssignableFrom(long.class) ) && NumberUtils.isNumber(value)) {
+          System.out.println("3fieldType:"+fieldType);
+          m.invoke(bean, 12333333l);
+        } else if ((ft.isAssignableFrom(Integer.class) || ft.isAssignableFrom(int.class))&& NumberUtils.isDigits(value)) {
           System.out.println("1fieldType:"+fieldType);
           m.invoke(bean, 1);
         } else if (Short.class.getName().equals(fieldType) && NumberUtils.isDigits(value)) {
@@ -198,14 +199,11 @@ public class BeanUtil extends BeanUtils {
         } else if (ob instanceof Float && NumberUtils.isNumber(value)) {
           System.out.println("2fieldType:"+fieldType);
           m.invoke(bean, 2.345f);
-        } else if (ob instanceof Long && NumberUtils.isNumber(value)) {
-          System.out.println("3fieldType:"+fieldType);
-          m.invoke(bean, 12333333L);
-        } else if (ob instanceof Double && NumberUtils.isNumber(value)) {
+        }  else if (ob instanceof Double && NumberUtils.isNumber(value)) {
           System.out.println("4fieldType:"+fieldType);
           m.invoke(bean, 3.456d);
-        } else if (Date.class.getName().equals(fieldType)) {
-          m.invoke(bean, DateUtils.parseDate(value, "yyyy-MM-dd", "yyyy-MM-dd HH:mm:ss"));
+        } else if (ft.isAssignableFrom(Date.class)) {
+          m.invoke(bean, DateUtils.parseDate("2018-01-01", "yyyy-MM-dd", "yyyy-MM-dd HH:mm:ss"));
         } else {
           if(ob instanceof Boolean){
             value = "false";

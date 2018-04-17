@@ -349,4 +349,5 @@
     });
 
 </script>
+<#include "/base/tj.ftl">
 </body>

@@ -51,7 +51,7 @@
 <div hidden="true" page-id="databse-login-page"></div>
 <script type="text/ecmascript" src="js/md5.js"></script>
 <script type="text/javascript" src="//static.chimeroi.com/lib/jquery-1.11.3.min.js"></script>
-
+<#include "/base/tj.ftl">
 </body>
 
 
