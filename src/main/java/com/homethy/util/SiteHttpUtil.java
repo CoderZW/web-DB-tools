@@ -22,9 +22,6 @@ import java.io.IOException;
 import java.lang.reflect.Field;
 import java.util.*;
 
-/**
- * Created by siwei.zhu on 2017/2/28.
- */
 public class SiteHttpUtil {
 
   private static final Log LOGGER = LogFactory.getLog(SiteHttpUtil.class);

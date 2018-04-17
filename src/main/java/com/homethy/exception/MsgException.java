@@ -1,8 +1,5 @@
 package com.homethy.exception;
 
-/**
- * @author houjun.fan
- */
 public class MsgException extends RuntimeException {
 
   public static final String DEFAULT_TYPE_ERROR = "error";

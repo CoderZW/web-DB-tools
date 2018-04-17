@@ -17,11 +17,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
-* @author chengrong.zheng  E-mail: chengrong.zheng@renren-inc.com
-* @version 创建时间：2016年1月23日 下午2:17:25
-* 类说明 控制器异常捕获类
-*/
 @ControllerAdvice
 public class GlobalHandlerExceptionResolver implements HandlerExceptionResolver {
 

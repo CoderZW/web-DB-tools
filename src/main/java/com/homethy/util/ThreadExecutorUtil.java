@@ -3,11 +3,6 @@ package com.homethy.util;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Future;
 
-/**
- * 线程池
- *
- * @author bing.li6 2016-03-28
- */
 public class ThreadExecutorUtil {
 
   private static final ThreadExecutor COMMON_EXECUTOR = new ThreadExecutor();

@@ -15,11 +15,6 @@ import java.security.AccessController;
 import java.security.MessageDigest;
 import java.security.PrivilegedAction;
 
-/**
- * 文件md5值
- * Created by 超文 on 2016/10/10.
- * version 1.0
- */
 public class FileMD5Util {
 
     private final static Logger logger = LoggerFactory.getLogger(FileMD5Util.class);

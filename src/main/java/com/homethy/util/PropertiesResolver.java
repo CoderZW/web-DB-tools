@@ -8,12 +8,6 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
 
-/**
- * 使用yourConfig.properties中的key作为Map中的key来索引值
- * 
- * @Author hongshuai.zhang
- * @CreateDate 2017-01-13 21:25:24
- */
 public class PropertiesResolver {
 
 	public static final Map<String,String> DATABASE_PROPERTIES = loadProperties("conf/application.properties");

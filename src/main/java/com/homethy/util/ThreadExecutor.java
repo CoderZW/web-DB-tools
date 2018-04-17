@@ -5,11 +5,6 @@ import org.apache.commons.logging.LogFactory;
 
 import java.util.concurrent.*;
 
-/**
- * 线程池
- *
- * @author bing.li6 2016-03-28
- */
 public class ThreadExecutor {
 
   private static final Log LOGGER = LogFactory.getLog(ThreadExecutor.class);

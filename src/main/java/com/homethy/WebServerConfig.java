@@ -9,11 +9,6 @@ import org.springframework.stereotype.Component;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
-/**
- * @author lanxu
- * @email xu.lan@renren-inc.com
- * @create 2017年07月19 13:21
- **/
 @Component
 public class WebServerConfig implements
   ApplicationListener<EmbeddedServletContainerInitializedEvent> {

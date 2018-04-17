@@ -18,7 +18,6 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * @author houjun.fan 2017-07-25
  */
 public class FileUtil {
 

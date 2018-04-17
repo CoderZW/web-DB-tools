@@ -79,67 +79,6 @@ public class UtilController {
   }
 
 
-  @RequestMapping(value = "domainInfo/getDomainInfoForgf", method = RequestMethod.POST)
-  public ModelAndView getDomainInfoForgf(
-      @RequestParam(value = "domain", required = true) String domain) throws Exception {
-    ModelAndView mv = new ModelAndView("homethy/domain_info_query");
-    mv.addObject("domain",domain);
-    List<DNSRecord> alist = DNSUtil.getDomainRecordsByType(domain, Type.A);
-    int domainIsToChime = 0;
-    if(CollectionUtils.isNotEmpty(alist)){
-      if(StringUtils.isNotBlank(alist.get(0).getValue()) && "52.52.24.52,52.9.101.47".contains(alist.get(0).getValue().trim())){
-        domainIsToChime = 1;
-      }
-    }
-
-    if(domainIsToChime == 0){
-
-      List<DNSRecord> list = DNSUtil.getDomainRecordsByType(domain, Type.NS);
-      Map<String, String> dnsMap = PropertiesResolver.REGISTRAR_DNS_KERWORDS_PROPERTIES;
-      mv.addObject("note", "域名NS未托管给GF,NS不明确，请与客户沟通确认domain provider及账号密码");
-      if (CollectionUtils.isNotEmpty(list) && MapUtils.isNotEmpty(dnsMap)) {
-
-        String ns = list.get(0).getValue();
-        String godaddyNs = dnsMap.get("godaddy");
-        String gfNs = dnsMap.get("geofarm");
-        //NS包含配置的关键字，说明NS为默认NS
-        if (ns.toLowerCase().contains(godaddyNs)) {
-          mv.addObject("note", "域名NS未托管给GF，godaddy域名，需要客户提供godaddy的账号和密码或者授权给我们配置！");
-        } else if(ns.toLowerCase().contains(gfNs)){
-          mv.addObject("note", "域名ns托管给了GF，无需提供其他账号信息即可配置三方");
-        }
-      }
-    }else{
-      mv.addObject("note", "该三方域名已配置到chime");
-    }
-
-    mv.addObject("domainIsToChime",domainIsToChime);
-    return mv;
-  }
-
-
-  @ResponseBody
-  @RequestMapping(value = "checkThirdDomain", method = RequestMethod.GET)
-  public String checkThirdDomain() throws Exception {
-
-    String statement = "select domain_name from website_info where domain_name not like '%chime.me' and domain_name not like '%proagentpage.com' and status <> 2";
-    String resultDomains = dataOperationService.executeSql("prd", "sitebuilt", HomethyStringUtil.replceMultipleOnlySpace(statement));
-
-    JSONObject jsonObject = JSONObject.fromObject(resultDomains);
-    JSONArray domainJson = jsonObject.getJSONArray("data");
-    if (domainJson != null || domainJson.size() != 0) {
-      for (int i = 0; i < domainJson.size(); i++) {
-        JSONObject jo = JSONObject.fromObject(domainJson.get(i));
-        String domainName = jo.getString("domain_name");
-        if (!DNSUtil.isChimeThirdDomain(domainName)) {
-          UpdateFiles.updateFile(domainName, "NO", "conf/thirdDomain.properties");
-        }
-      }
-    }
-    return "";
-  }
-
-
   @RequestMapping(value = "jsonFormart", method = RequestMethod.GET)
   public ModelAndView jsonFormart() {
     ModelAndView view = new ModelAndView("formart_json");

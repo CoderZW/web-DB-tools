@@ -22,9 +22,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * @author houjun.fan 2017-02-20
- */
 public class BeanUtil extends BeanUtils {
 
   public final static Class I = Integer.class;

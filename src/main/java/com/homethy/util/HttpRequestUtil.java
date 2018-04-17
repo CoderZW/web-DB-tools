@@ -28,12 +28,6 @@ import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
 import java.util.*;
 
-/**
- * @Title: HttpRequestUtil.java
- * @Package com.homethy.app.util
- * @Description: HttpRequest 参数获取 工具类
- * @author yunjie.shen 2015年10月26日 上午11:28:17
- */
 public class HttpRequestUtil {
   private final static Log logger = LogFactory.getLog(HttpRequestUtil.class);
 

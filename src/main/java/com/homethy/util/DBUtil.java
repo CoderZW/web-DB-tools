@@ -12,12 +12,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 import com.homethy.UserHolder;
-/**
- * 根据配置文件的内容返回数据库连接，使用数据库的名称作为key从Map中索引值
- * 
- * @Author hongshuai.zhang
- * @CreateDate 2017-01-11 15:24:19
- */
+
 public class DBUtil {
 
 	private static Map<String, Connection> dbConnections;

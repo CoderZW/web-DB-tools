@@ -1,10 +1,5 @@
 package com.homethy.util;
 
-//
-//Source code recreated from a .class file by IntelliJ IDEA
-//(powered by Fernflower decompiler)
-//
-
 
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonProcessingException;

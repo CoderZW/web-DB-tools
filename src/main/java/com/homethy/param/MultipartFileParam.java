@@ -3,10 +3,6 @@ package com.homethy.param;
 
 import org.springframework.web.multipart.MultipartFile;
 
-/**
- * Created by wenwen on 2017/4/16.
- * version 1.0
- */
 public class MultipartFileParam {
 
     // 用户id

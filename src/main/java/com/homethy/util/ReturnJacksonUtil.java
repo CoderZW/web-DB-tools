@@ -14,12 +14,6 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 
-/**
- * @ClassName: ReturnJacksonUtil
- * @Description: 定制Controller返回值工具类
- * @author: zhe.liu
- * @date: 2016-1-14
- */
 public class ReturnJacksonUtil {
 
   /**
