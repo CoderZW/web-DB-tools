@@ -2,7 +2,7 @@ package com.homethy.exception;
 
 import com.google.common.collect.ImmutableMap;
 import com.homethy.constant.ErrorCodeEnum;
-import com.homethy.constant.StringConstants;
+import com.homethy.constant.Constant;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -49,8 +49,8 @@ public class GlobalHandlerExceptionResolver implements HandlerExceptionResolver 
     Map<String, Object> result = new HashMap<String, Object>();
     MappingJackson2JsonView jsonView = new MappingJackson2JsonView();
 
-    status.put(StringConstants.RESULT_CODE, ErrorCodeEnum.UNKNOWN_ERROR.getErrorCode());
-    status.put(StringConstants.RESULT_MSG, ErrorCodeEnum.UNKNOWN_ERROR.getErrorMsg());
+    status.put(Constant.RESULT_CODE, ErrorCodeEnum.UNKNOWN_ERROR.getErrorCode());
+    status.put(Constant.RESULT_MSG, ErrorCodeEnum.UNKNOWN_ERROR.getErrorMsg());
     result.put("data",ex.toString());
     result.put("status",status);
 

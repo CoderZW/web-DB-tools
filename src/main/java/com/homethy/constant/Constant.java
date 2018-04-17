@@ -30,5 +30,13 @@ public class Constant {
    */
   public static final String FILE_UPLOAD_STATUS = "FILE_UPLOAD_STATUS";
 
+  public static final String RESULT_CODE = "code";
+
+  public static final String RESULT_MSG = "msg";
+
+  public static final String RESULT_STATUS = "status";
+
+  public static final String RESULT_DATA = "data";
+
 
 }

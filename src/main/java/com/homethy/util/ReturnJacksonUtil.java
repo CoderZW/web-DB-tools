@@ -4,7 +4,7 @@
 package com.homethy.util;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.homethy.constant.StringConstants;
+import com.homethy.constant.Constant;
 import com.homethy.constant.WebCodeEnum;
 
 import java.util.Arrays;
@@ -161,13 +161,13 @@ public class ReturnJacksonUtil {
     jsonViewClazz) throws JsonProcessingException {
 
     Map<String, Object> status = new HashMap<String, Object>();
-    status.put(StringConstants.RESULT_CODE, resultCode);
-    status.put(StringConstants.RESULT_MSG, String.valueOf(resultMsg));
+    status.put(Constant.RESULT_CODE, resultCode);
+    status.put(Constant.RESULT_MSG, String.valueOf(resultMsg));
 
     Map<String, Object> result = new HashMap<String, Object>();
-    result.put(StringConstants.RESULT_STATUS, status);
+    result.put(Constant.RESULT_STATUS, status);
     if (null != data) {
-      result.put(StringConstants.RESULT_DATA, data);
+      result.put(Constant.RESULT_DATA, data);
     }
     if (null == jsonViewClazz) {
       return JacksonUtils.toJson(result);
@@ -190,13 +190,13 @@ public class ReturnJacksonUtil {
     Set<String>> include, Map<Class, Set<String>> exclude) throws JsonProcessingException {
 
     Map<String, Object> status = new HashMap<String, Object>();
-    status.put(StringConstants.RESULT_CODE, resultCode);
-    status.put(StringConstants.RESULT_MSG, String.valueOf(resultMsg));
+    status.put(Constant.RESULT_CODE, resultCode);
+    status.put(Constant.RESULT_MSG, String.valueOf(resultMsg));
 
     Map<String, Object> result = new HashMap<String, Object>();
-    result.put(StringConstants.RESULT_STATUS, status);
+    result.put(Constant.RESULT_STATUS, status);
     if (null != data) {
-      result.put(StringConstants.RESULT_DATA, data);
+      result.put(Constant.RESULT_DATA, data);
     }
     return JacksonUtils.toJson(result, include, exclude);
   }
@@ -208,13 +208,13 @@ public class ReturnJacksonUtil {
     JsonProcessingException {
 
     Map<String, Object> status = new HashMap<String, Object>();
-    status.put(StringConstants.RESULT_CODE, resultCode);
-    status.put(StringConstants.RESULT_MSG, String.valueOf(resultMsg));
+    status.put(Constant.RESULT_CODE, resultCode);
+    status.put(Constant.RESULT_MSG, String.valueOf(resultMsg));
 
     Map<String, Object> result = new HashMap<String, Object>();
-    result.put(StringConstants.RESULT_STATUS, status);
+    result.put(Constant.RESULT_STATUS, status);
     if (null != data) {
-      result.put(StringConstants.RESULT_DATA, data);
+      result.put(Constant.RESULT_DATA, data);
     }
     return JacksonUtils.toJson(result);
   }
