@@ -25,10 +25,11 @@
 ***
 ![导出结果](https://github.com/hammerLei/web-DB-tools/blob/master/photo/database5.png)
 ***
-![导出结果](https://github.com/hammerLei/web-DB-tools/blob/master/photo/baidutj.png)
+![百度统计](https://github.com/hammerLei/web-DB-tools/blob/master/photo/baidutj.png)
 
 # 部署说明
 * 服务器下基础java环境请自行配置
+* feature目录中包含该服务用户建表SQL及nginx配置
 * deploy 成jar包
 * 项目目录下主要包含这些文件和目录 conf  homethy-site-database-1.0-SNAPSHOT.jar  log  logs  restart.sh
 * conf目录对象项目中的conf目录,里面文件内容打开看便知
